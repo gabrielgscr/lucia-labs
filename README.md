@@ -17,15 +17,36 @@ In [compiler-examples/](compiler-examples/), you will find the basic language ex
 You need Lucia installed. Then you can run any example with:
 
 ```bash
-lucia run compiler-examples/HelloWorld.lucia
+lucia run compiler-examples/14_hello_world.lucia
 ```
 
+## Example Naming Convention
+
+Naming rules depend on where the example is added:
+
+1. If the file goes into `compiler-examples/`, use:
+
+```text
+NN_topic_name.lucia
+```
+
+- `NN`: two-digit order (00, 01, 02, ...).
+- `topic_name`: short snake_case description.
+- Keep names in English to simplify search and collaboration.
+
+2. If it is a new standalone example, create a new snake_case folder with a representative name and place the files inside it.
+
+```text
+my_new_example_case/
+  main.lucia
+  helpers.lucia
+```
 ## Lucia CLI Basics
 
 Main commands:
 
 ```bash
-lucia run compiler-examples/HelloWorld.lucia
+lucia run compiler-examples/14_hello_world.lucia
 lucia compile compiler-examples/00_features.lucia
 ```
 
@@ -38,7 +59,7 @@ lucia compile compiler-examples/00_features.lucia --save
 Choose output target (for example, JavaScript):
 
 ```bash
-lucia run compiler-examples/HelloWorld.lucia --target js
+lucia run compiler-examples/14_hello_world.lucia --target js
 ```
 
 Useful CLI options:
@@ -75,15 +96,36 @@ En [compiler-examples/](compiler-examples/) encontraras los ejemplos basicos del
 Necesitas tener Lucia instalado. Luego puedes ejecutar cualquier ejemplo con:
 
 ```bash
-lucia run compiler-examples/HelloWorld.lucia
+lucia run compiler-examples/14_hello_world.lucia
 ```
 
+### Convencion de nombres de ejemplos
+
+La regla de nombres depende de donde se agregue el ejemplo:
+
+1. Si se agrega en `compiler-examples/`, usar:
+
+```text
+NN_topic_name.lucia
+```
+
+- `NN`: orden de dos digitos (00, 01, 02, ...).
+- `topic_name`: descripcion corta en snake_case.
+- Se recomienda usar nombres en ingles para facilitar busqueda y colaboracion.
+
+2. Si es un ejemplo nuevo independiente, crear una carpeta nueva en snake_case con un nombre representativo y colocar ahi los archivos.
+
+```text
+my_new_example_case/
+  main.lucia
+  helpers.lucia
+```
 ### CLI de Lucia: uso basico
 
 Comandos principales:
 
 ```bash
-lucia run compiler-examples/HelloWorld.lucia
+lucia run compiler-examples/14_hello_world.lucia
 lucia compile compiler-examples/00_features.lucia
 ```
 
@@ -96,7 +138,7 @@ lucia compile compiler-examples/00_features.lucia --save
 Elegir target de salida (por ejemplo, JavaScript):
 
 ```bash
-lucia run compiler-examples/HelloWorld.lucia --target js
+lucia run compiler-examples/14_hello_world.lucia --target js
 ```
 
 Opciones utiles del CLI:
