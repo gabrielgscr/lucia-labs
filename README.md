@@ -1,5 +1,7 @@
 # lucia-labs
 
+[![Lucia](https://img.shields.io/badge/Lucia-lang-blue?style=flat-square&logo=data:image/png;base64,iVBORw0KGgo=)](https://www.lucia-lang.com)
+
 Repository of labs and examples for the **Lucia** programming language.
 
 Language: [English](#what-is-lucia) | [Espanol](#espanol)
