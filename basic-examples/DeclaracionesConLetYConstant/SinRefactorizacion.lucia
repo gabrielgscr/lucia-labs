@@ -1,0 +1,8 @@
+let cantidadDolares: float = float(input("Digite el monto en dolares: "));
+
+
+print("En colones, al tipo de cambio actual corresponde a: ${conversionAColones(cantidadDolares)}");
+
+func conversionAColones(cantidad : float): float{
+      return cantidad * 480;
+}

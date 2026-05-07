@@ -1,0 +1,21 @@
+let cadena: string = "       MAria josE jesUS PABlo steVEN                           ";
+print("Cadena inicial: ${cadena}");
+
+let sinEspaciosIzquierdos: string = cadena.ltrim();
+print("Cadena sin espacios izquierdos: ${sinEspaciosIzquierdos}");
+
+let sinEspaciosDerechos: string = sinEspaciosIzquierdos.rtrim();
+print("Cadena sin espacios derechos: ${sinEspaciosDerechos}");
+
+let todoEnMinusculas: string = sinEspaciosDerechos.lower();
+print("Cadena todo en minuscula: ${todoEnMinusculas}");
+
+let listaNombres: list<string> = todoEnMinusculas.split(" ");
+print("Imprimiendo lista de nombres:");
+for (n in listaNombres) {
+    print(n);
+}
+print("Fin lista de nombres.");
+
+let cadenaCSV: string = ",".join(listaNombres);
+print("Cadena CSV: ${cadenaCSV}");

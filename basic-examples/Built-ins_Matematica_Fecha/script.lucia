@@ -1,0 +1,20 @@
+print("Imprimiendo fecha: ${today()}");
+print("Imprimiendo timestamp: ${now()}");
+
+let numero: int = int(input("Digite el número que quiere para las expresiones trigonometricas de raiz cuadrada, seno, conseno, tangente, algoritmo, base de potencia: "));
+let base: int = int(input("Digite el número que quiere para la base de logaritmo: "));
+let exponente: int = int(input("Digite el número que quiere para exponente de potencia: "));
+let flotante: float = float(input("Digite el número (preferiblemente real o flotante) que quiere para redondeo: "));
+let absoluto: int = int(input("Digite el número que quiere para valor absoluto: "));
+
+print("Raiz cuadrada de ${numero}: ${sqrt(numero)}");
+print("Seno de ${numero}: ${sin(numero)}");
+print("Coseno de ${numero}: ${cos(numero)}");
+print("Tangente de ${numero}: ${tan(numero)}");
+print("Logaritmo de ${numero} (solo valor): ${log(numero)}");
+print("Logaritmo de ${numero} con base: ${log(numero, base)}");
+print("Potencia de ${numero} con exponente ${exponente}: ${pow(numero, exponente)}");
+print("Valor absoluto de ${absoluto}: ${abs(absoluto)}");
+print("Redondeo de número ${flotante}: ${round(flotante)}");
+print("Redondeo hacia abajo de número ${flotante}: ${floor(flotante)}");
+print("Redondeo hacia arriba de número ${flotante}: ${ceil(flotante)}");

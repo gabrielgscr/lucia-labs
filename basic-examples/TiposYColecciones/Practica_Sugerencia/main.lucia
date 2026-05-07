@@ -1,0 +1,25 @@
+import "tipo.lucia";
+import "habilidad.lucia";
+import "Carta.lucia";
+import "tablero.lucia";
+
+
+let tablero: Tablero = Tablero();
+
+tablero.anadirAlMazo(Carta(0,0));
+tablero.anadirAlMazo(Carta(1,1));
+tablero.anadirAlMazo(Carta(0,2));
+tablero.anadirAlMazo(Carta(1,2));
+tablero.anadirAlMazo(Carta(0,1));
+tablero.anadirAlMazo(Carta(1,0));
+
+print("******Inicio Mostrando mazo sin barajar******");
+tablero.mostrarMazo();
+print("******Fin Mostrando mazo sin barajar******");
+tablero.mezclarMazo();
+print("******MAZO MEZCLADO******");
+print("******Inicio Mostrando mazo barajado******");
+tablero.mostrarMazo();
+print("******Fin Mostrando mazo barajado******");
+
+

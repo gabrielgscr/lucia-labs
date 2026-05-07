@@ -1,0 +1,103 @@
+import "./BlackJack/Carta.lucia";
+import "./BlackJack/Tablero.lucia";
+import "./BlackJack/Jugador.lucia";
+
+let jugadores: int = int(input("¿Cuántos jugadores desea permitir?"));
+let tablero: Tablero = Tablero();
+
+for (let i: int = 0; i < jugadores; i++) {
+    let nombre: string = input("Nombre del jugador: ");
+    let monto: float = float(input("Monto disponible: "));
+    let jugador: Jugador = Jugador(nombre, monto);
+
+    // Pedir apuesta
+    jugador.ApuestaActual = float(input("¿Cuánto desea apostar? "));
+    jugador.MontoDisponible = jugador.MontoDisponible - jugador.ApuestaActual;
+
+    // Reparto inicial de 2 cartas
+    jugador.Cartas.append(tablero.obtenerSiguienteCarta());
+    jugador.Cartas.append(tablero.obtenerSiguienteCarta());
+
+    tablero.Jugadores.append(jugador);
+}
+
+let dealer: Jugador = Jugador("Dealer", 0.0);
+dealer.Cartas.append(tablero.obtenerSiguienteCarta());
+dealer.Cartas.append(tablero.obtenerSiguienteCarta());
+
+// Mostrar solo la primera carta
+let cartaDealer = dealer.Cartas[0];
+print("Carta visible del Dealer: "+ cartaDealer.toString());
+
+// 2. Mostrar estado inicial
+for (j in tablero.Jugadores) {
+    print("Jugador "+ j.Nombre + " tiene un total de: "+ str(j.sumarCartas()));
+}
+
+// Ciclo principal del juego
+let finalizar: bool = false;
+while (!finalizar) {
+    for (j in tablero.Jugadores) {
+        // Solo preguntamos si el jugador sigue en juego
+        if (j.playing) {
+            let respuesta: string = input("Jugador "+ j.Nombre + " ¿Desea una carta? (S/N)");
+
+            if (respuesta == "S"|| respuesta == "s") {
+                let nuevaCarta: Carta = tablero.obtenerSiguienteCarta();
+                j.Cartas.append(nuevaCarta);
+
+                let total: int = j.sumarCartas();
+                print("Tu total es: "+ str(total));
+
+                if (total > 21) {
+                    print("¡Te has pasado de 21!");
+                    j.playing = false;
+                }
+            } else {
+                j.playing = false;
+            }
+            j.mostrarCartas();
+        }
+    }
+
+    // Condición para terminar el juego (ejemplo: todos los jugadores terminaron)
+    finalizar = true;
+    for (j in tablero.Jugadores) {
+        if (j.playing) {
+            finalizar = false;
+        }
+    }
+}
+
+// Turno del Dealer
+while (dealer.sumarCartas() < 17) {
+    print("El Dealer pide carta...");
+    dealer.Cartas.append(tablero.obtenerSiguienteCarta());
+}
+print("Total del Dealer: "+ str(dealer.sumarCartas()));
+dealer.mostrarCartas();
+
+print("--- Resultados Finales ---");
+
+for (j in tablero.Jugadores) {
+    let total: int = j.sumarCartas();
+
+    if (total > 21) {
+        print("Jugador "+ j.Nombre + " perdió (se pasó de 21).");
+    } else {
+        // Asumimos que el "Dealer" o la casa tiene 17 puntos para este ejemplo
+        let puntajeCasa: int = dealer.sumarCartas();
+
+        if (total > puntajeCasa) {
+            print("Jugador "+ j.Nombre + " ganó!");
+            j.MontoDisponible = j.MontoDisponible + (j.ApuestaActual * 2);
+        } else if (total == puntajeCasa) {
+            print("Jugador "+ j.Nombre + " empató.");
+            j.MontoDisponible = j.MontoDisponible + j.ApuestaActual;
+        } else {
+            print("Jugador "+ j.Nombre + " perdió contra la casa.");
+        }
+    }
+
+    print("Nuevo saldo de "+ j.Nombre + ": "+ str(j.MontoDisponible));
+}

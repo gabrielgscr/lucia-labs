@@ -1,0 +1,2 @@
+let ATAQUE: int = 0;
+let DEFENSA: int = 1;

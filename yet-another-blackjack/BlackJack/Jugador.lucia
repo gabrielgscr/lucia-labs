@@ -1,0 +1,55 @@
+import "Carta.lucia";
+
+class Jugador{
+
+    let Nombre: string;
+    let MontoDisponible: float;
+    let ApuestaActual: float;
+    let Cartas: list<Carta>;
+    let playing: bool;
+
+    constructor(Nombre: string, MontoDisponible: float) {
+        this.Nombre = Nombre;
+        this.MontoDisponible = MontoDisponible;
+        this.ApuestaActual = 0.0;
+        this.Cartas = [];
+        this.playing = true;
+    }
+
+    //Regresa true si continua o false si no continua recibiendo cartas
+    func recibeCarta() : bool{
+        return playing;
+    }
+
+    func mostrarCartas() : void {
+        print("Cartas de ${Nombre}");
+        for (c in Cartas) {
+            print(c.toString());
+        }
+    }
+
+    //Suma el valor de las cartas que tiene el usuario
+    func sumarCartas(): int {
+        let total: int = 0;
+        let cantidadAses: int = 0;
+
+        for (c in Cartas) {
+            if (c.Valor == 1) {
+                total = total + 11;
+                cantidadAses = cantidadAses + 1;
+            } else if (c.Valor == 11 || c.Valor == 12 || c.Valor == 13) {
+                total = total + 10;
+            } else {
+                total = total + c.Valor;
+            }
+        }
+
+        while (total > 21 && cantidadAses > 0) {
+            total = total - 10;
+            cantidadAses = cantidadAses - 1;
+        }
+
+        return total;
+    }
+
+}

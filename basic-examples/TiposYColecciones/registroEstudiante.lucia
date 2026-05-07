@@ -1,0 +1,22 @@
+let registroEstudiante: dict<string, any> = {
+    "Nombre Completo": "Jesús Gutiérrez",
+    "Identificación": "304930895",
+    "Clave Cuatrimestre": "IC-2026",
+    "Notas": [
+    {"Materia": "Fundamentos de Programación","Nota": 96,"Aprobado": true},
+    {"Materia": "Fundamentos de Bases de Datos","Nota": 89,"Aprobado": true}
+    ],
+    "Contacto": {
+        "Telefono": "84017175",
+        "Correo Electronico": "jesus960904@gmail.com"
+    }
+};
+
+print(registroEstudiante.get("Notas"));
+let listaNotas: list<dict<string, any>> = registroEstudiante.get("Notas");
+print(listaNotas[1]);
+let diccionarioBasesDeDatos: dict<string, any> = listaNotas[1];
+
+if (diccionarioBasesDeDatos.contains_key("Nota")) {
+    print("Nota: "+ str(diccionarioBasesDeDatos.get("Nota", 0)));
+}

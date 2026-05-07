@@ -1,0 +1,34 @@
+class MedioDeTransporte{
+      let nombreMedio: string;
+
+      func accion(): string{
+            return "...";
+      }
+}
+
+class Avion extends MedioDeTransporte{
+      func accion(): string{
+      return "anda en los aires";
+      }
+
+      func Renombrar(medio: string): void{
+            this.nombreMedio = medio;
+      }
+
+      func condicionalLista(): void{
+      let lista: list<int> = [5, 7, 24, 4];
+      for(let j: int=0; j < len(lista); j++){
+            if (lista[j] % 2 == 0){
+            continue;
+            }
+            else{
+                  print(lista[j]);
+            }
+      }
+      }
+}
+
+func Describir(m : MedioDeTransporte): void{
+      print("El ${m.nombreMedio} hace esto: ${m.accion()}");
+
+}

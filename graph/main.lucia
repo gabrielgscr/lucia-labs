@@ -1,0 +1,24 @@
+import "grafo.lucia";
+
+let grafo: Grafo = Grafo();
+
+grafo.agregarNodo("A");
+grafo.agregarNodo("B");
+grafo.agregarNodo("C");
+grafo.agregarNodo("D");
+
+grafo.conectar("A","B");
+grafo.conectar("A","C");
+grafo.conectar("B","D");
+
+let nodoA: Nodo = grafo.buscarNodo("A");
+
+if (nodoA != null) {
+    print("Nodo encontrado:");
+    print(nodoA.id);
+
+    print("Vecinos de A:");
+    for (vecino in nodoA.vecinos) {
+        print(vecino.id);
+    }
+}

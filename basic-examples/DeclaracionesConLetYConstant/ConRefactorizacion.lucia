@@ -1,0 +1,9 @@
+const tipoCambio = 480;
+
+func conversionAColones(cantidad: float): float{
+    return cantidad * tipoCambio;
+}
+
+let cantidadDolares: float = float(input("Digite el monto en dolares: "));
+
+print("En colones, al tipo de cambio actual corresponde a: ${conversionAColones(cantidadDolares)}");

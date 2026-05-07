@@ -1,0 +1,41 @@
+class Nodo {
+    let id: string;
+    let vecinos: list<Nodo> = [];
+
+    constructor() {
+        this.id = "null";
+    }
+
+    func agregarVecino(nodo: Nodo): void {
+        this.vecinos.append(nodo);
+    }
+}
+
+class Grafo {
+    let nodos: list<Nodo> = [];
+
+    func agregarNodo(id: string): void {
+        let nuevoNodo: Nodo = Nodo();
+        nuevoNodo.id = id;
+        this.nodos.append(nuevoNodo);
+    }
+
+    func buscarNodo(id: string): Nodo {
+        for (n in this.nodos) {
+            if (n.id == id) {
+                return n;
+            }
+        }
+        return null;
+    }
+
+    func conectar(id1: string, id2: string): void {
+        let n1 = this.buscarNodo(id1);
+        let n2 = this.buscarNodo(id2);
+
+        if (n1 != null && n2 != null) {
+            n1.agregarVecino(n2);
+            n2.agregarVecino(n1); // Si el grafo es no dirigido
+        }
+    }
+}

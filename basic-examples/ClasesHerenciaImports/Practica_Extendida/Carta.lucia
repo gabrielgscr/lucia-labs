@@ -1,0 +1,34 @@
+import "tipo.lucia";
+import "habilidad.lucia";
+
+class Carta{
+
+    let tipo: int;
+    let habilidad: int;
+
+    constructor(tipo: int, habilidad: int) {
+        this.tipo = tipo;
+        this.habilidad = habilidad;
+    }
+
+    func obtenerTipo(): string{
+        switch (this.tipo) {
+            case 0: return "Ataque";
+            case 1: return "Defensa";
+            case 2: return "Desconocido";
+        }
+    }
+
+    func obtenerHabilidad(): string{
+        switch (this.habilidad) {
+            case 0: return "Super Fuerza";
+            case 1: return "Vuelo";
+            case 2: return "Invisibilidad";
+            case 3: return "Desconocido";
+        }
+    }
+
+    func toString(): string{
+        return "${this.obtenerHabilidad()} de ${this.obtenerTipo()}";
+    }
+}

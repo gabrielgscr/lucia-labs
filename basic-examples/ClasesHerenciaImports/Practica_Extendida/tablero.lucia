@@ -1,0 +1,35 @@
+import "tipo.lucia";
+import "habilidad.lucia";
+import "Carta.lucia";
+
+class Tablero{
+let Mazo: list<Carta>;
+
+constructor(){
+this.Mazo = [];
+}
+
+func anadirAlMazo(c : Carta): void{
+      this.Mazo.append(c);
+      print("Carta ${c.toString()} añadida!");
+}
+
+func mostrarMazo(): void{
+for(carta in this.Mazo){
+print(carta.toString());
+}
+}
+
+func mezclarMazo(): void{
+let n: int = len(this.Mazo);
+
+for(let i: int = 0; i <n; i++){
+      let j: int = random(0, n-1);
+      let temp: Carta = this.Mazo[i];
+      this.Mazo[i] = this.Mazo[j];
+      this.Mazo[j] = temp;
+}
+}
+}
+
+

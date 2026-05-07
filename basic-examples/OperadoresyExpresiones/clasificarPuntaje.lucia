@@ -1,0 +1,19 @@
+let puntaje1: int = int(input("Ingrese el puntaje 1: "));
+let puntaje2: int = int(input("Ingrese el puntaje 2: "));
+let puntaje3: int = int(input("Ingrese el puntaje 3: "));
+
+func verificarPar(numero: int): string{
+    return if (numero % 2 == 0) ? "Si": "No";
+}
+
+print("¿Es el número ${puntaje1} par? ${verificarPar(puntaje1)}");
+print("¿Es el número ${puntaje2} par? ${verificarPar(puntaje2)}");
+print("¿Es el número ${puntaje3} par? ${verificarPar(puntaje3)}");
+
+func clasificacionPuntaje(numero: int): string{
+    return if (numero > 70) ? "Alto": "Bajo";
+}
+
+print("La clasificación del número ${puntaje1} es: ${clasificacionPuntaje(puntaje1)}");
+print("La clasificación del número ${puntaje2} es: ${clasificacionPuntaje(puntaje2)}");
+print("La clasificación del número ${puntaje3} es: ${clasificacionPuntaje(puntaje3)}");

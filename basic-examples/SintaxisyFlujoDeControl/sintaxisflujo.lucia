@@ -1,0 +1,71 @@
+let opcion: int = 0;
+let continuar: bool = false;
+
+func deseaContinuar(): bool{
+    let respuesta: string = input("¿Desea Continuar? (S/N)");
+    return if (respuesta.upper() == "S") ? true: false;
+}
+
+func funcionBucle(numero: int): void{
+    for (let i: int = 0; i < numero; i++) {
+        if (i * 2 + 1 > 5) {
+            continue;
+        }
+        else if (i % 2 == 0) {
+            print("El actual número ${i} es par.");
+        }else {
+            print("El número es ${i}.");
+        }
+    }
+}
+
+do {
+
+    print("*************************");
+    print("1. Menú de Lunes");
+    print("2. Menú de Martes");
+    print("3. Menú de Miércoles");
+    print("4. Menú de Jueves");
+    print("5. Menú de Viernes");
+    print("6. Menú de Sabádo");
+    print("7. Menú de Domingo");
+    print("8. Bucle");
+    print("*************************");
+    try{
+        let opcion = int(input("Por favor seleccione una opción: "));
+
+        switch (opcion) {
+            case 1:
+            print("Arroz con calamares");
+            continuar = deseaContinuar();
+            case 2:
+            print("Arroz con pollo");
+            continuar = deseaContinuar();
+            case 3:
+            print("Arroz cantones");
+            continuar = deseaContinuar();
+            case 4:
+            print("Hamburguesas");
+            continuar = deseaContinuar();
+            case 5:
+            print("Pollo frito");
+            continuar = deseaContinuar();
+            case 6:
+            print("Pescado a la plancha");
+            continuar = deseaContinuar();
+            case 7:
+            print("Pizza");
+            continuar = deseaContinuar();
+            case 8:
+            let numeroBucle: int = int(input("Digite el número para el bucle"));
+            funcionBucle(numeroBucle);
+            continuar = deseaContinuar();
+        }
+
+    } catch (error) {
+        print("Error ejecutando el programa: ${error}");
+    }
+    finally{
+        print("Gracias por utilizar el programa!");
+    }
+}while (continuar);

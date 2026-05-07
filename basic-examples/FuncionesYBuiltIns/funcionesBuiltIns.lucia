@@ -1,0 +1,23 @@
+let listaNumeros: list<int> = [];
+let acumulador: int = 0;
+
+let cantidadNumeros: int = int(input("Digite la cantidad de números: "));
+
+func Promedio(suma: int, cantidadNmeros: int): float{
+    return suma / cantidadNumeros;
+}
+
+func AprobarReprobar(lista: list<int>): void{
+    for (let i: int = 0; i< len(lista); i++) {
+        if (i >= 70) ? print("Nota ${lista[i]} resultado: Aprobado") : print("Nota ${lista[i]} resultado: Reprobado");
+    }
+}
+
+for (let i: int = 0; i < cantidadNumeros; i++) {
+    let numero: int = int(input("Digite el número en la posición ${i+1} de la lista: "));
+    listaNumeros.append(numero);
+    acumulador += numero;
+}
+
+print("El promedio de la lista de números es: ${Promedio(acumulador, len(listaNumeros))}");
+AprobarReprobar(listaNumeros);

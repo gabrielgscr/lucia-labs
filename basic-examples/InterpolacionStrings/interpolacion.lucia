@@ -1,0 +1,19 @@
+let lista: list<dict<string, any>> = [
+{"Nombre": "Jesús Gutiérrez","Materia": "Programacion II","Nota": 85},
+{"Nombre": "Carlos Brenes","Materia": "Programacion II","Nota": 84},
+{"Nombre": "Maria Estrada","Materia": "Programacion II","Nota": 87}
+];
+
+func aprobadoONo(nota: int): string{
+    return if (nota >= 70) ? "Aprobado": "Reprobado";
+}
+
+for (let i: int = 0; i < len(lista); i++) {
+    let diccionario: dict<string, any> = lista[i];
+    let nombre: string = diccionario.get("Nombre","Nombre no especificado");
+    let materia: string = diccionario.get("Materia","Materia no especificada");
+    let nota: int = diccionario.get("Nota","Nota no especificada");
+
+    print("Nombre de Estudiante: ${nombre}.  Materia cursada: ${materia}.   Condición: ${aprobadoONo(nota)}");
+
+}

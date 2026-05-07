@@ -1,0 +1,14 @@
+import "otro.lucia";
+
+func main(): void{
+    const nombreApp = "Prueba Jesús";
+    print("Iniciando ${nombreApp}");
+
+    let A340300: Avion = Avion();
+
+    A340300.Renombrar("Avión");
+    A340300.condicionalLista();
+
+    let avion: MedioDeTransporte = A340300;
+    Describir(avion);
+}

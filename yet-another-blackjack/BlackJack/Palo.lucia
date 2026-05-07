@@ -1,0 +1,4 @@
+let DIAMANTES: int = 0;
+let ESPADAS: int = 1;
+let TREBOLES: int = 2;
+let CORAZONES: int = 3;

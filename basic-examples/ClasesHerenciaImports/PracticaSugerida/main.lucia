@@ -1,0 +1,8 @@
+import "./Clases/Deportista.lucia";
+import "./Clases/Ciclista.lucia";
+
+let ciclista: Ciclista = Ciclista("Ciclista MTX");
+
+let ciclistaMTX: Deportista = ciclista;
+
+print(ciclistaMTX.accion());

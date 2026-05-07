@@ -1,0 +1,56 @@
+import "Palo.lucia";
+import "Color.lucia";
+
+//Clase carta
+//Creada por: Gabriel González
+//Representa una carta de una baraja
+class Carta{
+
+    //Propiedades de la clase
+    let Palo: int;
+    let Color: int;
+    let Valor: int;
+
+    //constructor de la clase Carta
+    constructor(Palo: int, Color: int, Valor: int) {
+        this.Palo = Palo;
+        this.Color = Color;
+        this.Valor = Valor;
+    }
+
+    //Obtiene el nombre del color de la carta
+    func obtenerNombreColor(): string {
+        switch (this.Color) {
+            case ROJO: return "Diamantes";
+            case NEGRO: return "Espadas";
+            default: return "Desconocido";
+        }
+    }
+
+    //Obtiene el nombre del valor de la carta
+    func obtenerNombreValor(): string{
+        switch (this.Valor) {
+            case 1: return "As";
+            case 11: return "Jota";
+            case 12: return "Reina";
+            case 13: return "Rey";
+            default: return str(this.Valor);
+        }
+    }
+
+    //Obtiene el noombre del palo que posee la carta
+    func obtenerNombrePalo(): string{
+        switch (this.Palo) {
+            case DIAMANTES: return "Diamantes";
+            case ESPADAS: return "Espadas";
+            case TREBOLES: return "Tréboles";
+            case CORAZONES: return "Corazones";
+            default: return "Desconocido";
+        }
+    }
+
+    //Obtiene la representación de la carta como un texto
+    func toString(): string{
+        return obtenerNombreValor() + " de "+ obtenerNombrePalo();
+    }
+}

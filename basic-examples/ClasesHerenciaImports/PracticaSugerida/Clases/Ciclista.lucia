@@ -1,0 +1,13 @@
+import "Deportista.lucia";
+
+class Ciclista extends Deportista{
+
+    constructor(profesion: string) {
+        this.profesion = profesion;
+        this.fecha = today();
+    }
+
+    func accion(): string{
+        return "El ${profesion} usa hoy ${fecha} su bibicleta para recorrer montañas y grandes distancias";
+    }
+}

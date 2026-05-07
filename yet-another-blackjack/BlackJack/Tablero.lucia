@@ -1,0 +1,59 @@
+import "Jugador.lucia";
+import "Palo.lucia";
+import "Carta.lucia";
+
+class Tablero{
+    let Jugadores: list<Jugador>;
+    let mazo: list<Carta>;
+    let posicionActual: int;
+
+    constructor() {
+        this.Jugadores = [];
+        this.mazo = [];
+        generarMazo();
+        this.posicionActual = 0;
+
+    }
+
+    func obtenerSiguienteCarta(): Carta{
+        let c: Carta = mazo[posicionActual];
+        posicionActual++;
+        if (posicionActual > len(mazo)) {
+            mezclarMazo();
+            posicionActual = 0;
+        }
+        return c;
+    }
+
+    func agregarJugador(jugador: Jugador): void {
+        Jugadores.append(jugador);
+    }
+
+    func limpiarJugadores() : void {
+        Jugadores.clear();
+    }
+
+    func generarMazo(): void {
+        let palos: list<int> = [DIAMANTES, ESPADAS, TREBOLES, CORAZONES];
+
+        for (p in palos) {
+            let colorActual: int = if (p == DIAMANTES || p == CORAZONES) ? ROJO: NEGRO;
+            for (let v = 1; v <= 13; v = v + 1) {
+                let nuevaCarta: Carta = Carta(p, colorActual, v);
+                this.mazo.append(nuevaCarta);
+            }
+        }
+        mezclarMazo();
+    }
+
+    func mezclarMazo(): void {
+        let n: int = len(this.mazo);
+        for (let i = 0; i < n; i = i + 1) {
+            let j: int = random(0, n - 1);
+            let temp: Carta = this.mazo[i];
+            this.mazo[i] = this.mazo[j];
+            this.mazo[j] = temp;
+        }
+    }
+
+}

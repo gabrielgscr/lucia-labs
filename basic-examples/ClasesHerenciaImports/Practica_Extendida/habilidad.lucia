@@ -1,0 +1,3 @@
+let superfuerza: int = 0;
+let vuelo: int = 1;
+let invisibilidad: int = 2;

@@ -1,0 +1,9 @@
+class Deportista{
+    let profesion: string;
+    let fecha: date;
+
+    func accion(): string{
+        return "...";
+    }
+
+}
