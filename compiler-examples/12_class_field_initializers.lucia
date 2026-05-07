@@ -1,0 +1,24 @@
+class Counter {
+    let name: string = "default";
+    let value: int = 10;
+    const step: int = 2;
+
+    constructor(initialName: string) {
+        this.name = initialName;
+    }
+
+    func tick(): void {
+        this.value += this.step;
+    }
+
+    func info(): string {
+        return "${this.name}: ${this.value}";
+    }
+}
+
+func main(): void {
+    let c: Counter = Counter("demo");
+    print(c.info());
+    c.tick();
+    print(c.info());
+}

@@ -1,0 +1,7 @@
+func demo(): int {
+    return "texto";
+}
+
+func main(): void {
+    x = 10;
+}

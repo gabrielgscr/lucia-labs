@@ -1,0 +1,55 @@
+// Ejemplo: métodos extendidos de lista, string, funciones matemáticas y null coalescing
+
+func main(): void {
+
+    // ── Métodos de lista ──────────────────────────────────────────────────────
+
+    let nums: list<int> = [5, 2, 8, 1, 9, 3];
+    print("Original:");
+    print(nums);
+
+    nums.sort();
+    print("Sorted:");
+    print(nums);
+
+    nums.reverse();
+    print("Reversed:");
+    print(nums);
+
+    let idx: int = nums.indexOf(8);
+    print("Index of 8:");
+    print(idx);
+
+    let part: list<int> = nums.slice(1, 4);
+    print("Slice [1,4):");
+    print(part);
+
+    // ── Métodos de string ─────────────────────────────────────────────────────
+
+    let msg: string = "Hola mundo cruel";
+    print(msg.replace("cruel","hermoso"));
+    print(msg.indexOf("mundo"));
+    print(msg.substring(5, 10));
+    let ab: string = "ab";
+    print(ab.repeat(4));
+
+    // ── Funciones matemáticas ─────────────────────────────────────────────────
+
+    print(sqrt(16.0));
+    print(sin(0.0));
+    print(cos(0.0));
+    print(tan(0.0));
+    print(log(1.0));
+    print(log(8.0, 2.0));
+
+    // ── Null coalescing (??) ──────────────────────────────────────────────────
+
+    let maybe: any = null;
+    let result: string = maybe ?? "valor por defecto";
+    print(result);
+
+    let name: any = "Lucia";
+    let display: any = name ?? "anónimo";
+    print(display);
+
+}

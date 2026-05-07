@@ -1,0 +1,14 @@
+func main(): void {
+    let a: int = ;
+
+    if (a > 2 {
+        print("hola")
+    }
+
+    let b = 10
+    print(b)
+
+    for (let i: int = 0; i < 3 i = i + 1) {
+        print(i)
+    }
+}

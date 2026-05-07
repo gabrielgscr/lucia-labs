@@ -1,0 +1,36 @@
+// Ejemplo: herencia de clases y const.
+
+class Animal {
+    let name: string;
+
+    func speak(): string {
+        return "...";
+    }
+}
+
+class Dog extends Animal {
+    func speak(): string {
+        return "woof";
+    }
+
+    func rename(newName: string): void {
+        this.name = newName;
+    }
+}
+
+func describe(a: Animal): void {
+    print("Animal: ${a.name} dice ${a.speak()}");
+}
+
+func main(): void {
+    const appName: string ="Lucia OOP Demo";
+    print("Iniciando ${appName}");
+
+    let dog: Dog = Dog();
+    dog.rename("Luna");
+
+    let pet: Animal = dog;
+    describe(pet);
+}
+
+main();

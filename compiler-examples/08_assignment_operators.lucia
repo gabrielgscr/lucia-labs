@@ -1,0 +1,24 @@
+// Ejemplo: operadores de asignacion compuesta e incremento/decremento.
+
+func main(): void {
+    let total: int = 100;
+    total += 20;
+    total -= 10;
+    total *= 2;
+    total /= 5;
+    total %= 7;
+
+    let i: int = 0;
+    i++;
+    i++;
+    i--;
+
+    for (let j: int = 0; j < 3; j++) {
+        total += j;
+    }
+
+    print(total);
+    print(i);
+}
+
+main();

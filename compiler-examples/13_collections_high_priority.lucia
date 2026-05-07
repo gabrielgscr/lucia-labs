@@ -1,0 +1,76 @@
+// Ejemplo integral: metodos avanzados de list, dict y string
+
+func demoList(): void {
+    print("=== list methods ===");
+
+    let nums: list<int> = [3, 1, 2];
+    nums.insert(1, 99);
+    nums.remove(1);
+    let removed: int = nums.removeAt(0);
+    nums.extend([7, 8]);
+
+    print("first: ${nums.first()}");
+    print("last: ${nums.last()}");
+    print("is_empty: ${nums.is_empty()}");
+
+    let copyNums: list<int> = nums.copy();
+    nums.clear();
+
+    print("removed: ${removed}");
+    print("copy: ${copyNums}");
+    print("after clear: ${nums}");
+}
+
+func demoDict(): void {
+    print("=== dict methods ===");
+
+    let scores: dict<string, int> = {"ana": 10,"luis": 20};
+    scores.put("eva", 15);
+    scores.remove("ana");
+
+    let merged: dict<string, int> = scores.merge({"zoe": 30});
+
+    print("keys: ${scores.keys()}");
+    print("values: ${scores.values()}");
+    print("items: ${scores.items()}");
+    print("size: ${scores.size()}");
+    print("is_empty: ${scores.is_empty()}");
+    print("merged: ${merged}");
+
+    scores.clear();
+    print("after clear: ${scores}");
+}
+
+func demoString(): void {
+    print("=== string methods ===");
+
+    let text: string = "  lucia editor  ";
+
+    print(text.ltrim());
+    print(text.rtrim());
+    print("7".pad_left(3,"0"));
+    print("A".pad_right(3,"_"));
+
+    print("42".to_int());
+    print("3.14".to_float());
+    print("yes".to_bool());
+
+    print("banana".count("a"));
+    print("lucia".capitalize());
+    print("lucia editor".title());
+
+    print("123".is_numeric());
+    print("abc".is_alpha());
+    print("abc123".is_alnum());
+
+    let clean: string = ("  Lucia  ").trim().lower();
+    print(clean);
+}
+
+func main(): void {
+    demoList();
+    demoDict();
+    demoString();
+}
+
+main();

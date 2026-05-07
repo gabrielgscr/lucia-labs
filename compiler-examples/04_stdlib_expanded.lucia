@@ -1,0 +1,39 @@
+func stringsDemo(): void {
+    let text: string ="  Lucia Language  ";
+    let sep: string ="-";
+    let parts: list<string> = text.trim().split(" ");
+    print(text.upper());
+    print(text.lower());
+    print(text.trim());
+    print(text.contains("Lang"));
+    print(text.starts_with("  Lu"));
+    print(text.ends_with("  "));
+    print(sep.join(parts));
+    print(text.trim().lower().contains("lucia"));
+}
+
+func mathDemo(): void {
+    print(abs(-10));
+    print(min(3, 8));
+    print(max(3, 8));
+    print(pow(2, 4));
+    print(round(3.6));
+    print(floor(3.9));
+    print(ceil(3.1));
+}
+
+func collectionsDemo(): void {
+    let nums: list<int> = [1, 2, 3, 4];
+    let info: dict<string, int> = {"one": 1,"two": 2};
+    print(nums.contains(3));
+    print(nums.pop());
+    print(info.contains_key("one"));
+    print(info.get("two"));
+    print(info.get("missing", 0));
+}
+
+func main(): void {
+    stringsDemo();
+    mathDemo();
+    collectionsDemo();
+}

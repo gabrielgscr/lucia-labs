@@ -1,0 +1,20 @@
+// Ejercicio: Calculo de salario
+// Version en Lucia basada en el ejemplo de PSeInt.
+
+func main(): void {
+    let salario: float = 0.0;
+
+    print("Digite el monto del salario:");
+    salario = float(input());
+
+    if ((salario >= 100000.0) && (salario <= 400000.0)) {
+        print("El monto aumentado es: " + str(salario + 50000.0));
+    } else if ((salario >= 400001.0) && (salario <= 1000000.0)) {
+        print("El monto aumentado es: " + str(salario * 1.15));
+    } else if (salario > 1000000.0) {
+        print("El monto aumentado es: " + str(salario * 1.20));
+    } else {
+        print("Digite un monto de salario entre los rangos");
+    }
+}
+

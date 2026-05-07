@@ -1,0 +1,12 @@
+import "reports.lucia";
+
+func main(): void {
+    let ana = Persona("Ana", [10, 9, 8, 10]);
+    let luis = Persona("Luis", [9, 8, 9, 9]);
+
+    imprimirResumen(ana, luis);
+
+    let notas: list<int> = [10, 9, 8, 10, 9, 8, 9, 9];
+    let items: list<string> = [];
+    imprimirPromedioGlobal(notas);
+}

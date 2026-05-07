@@ -1,0 +1,20 @@
+import "math_utils.lucia";
+import "people.lucia";
+
+func imprimirResumen(p1: Persona, p2: Persona): void {
+    let mejorTotal: int = maximo(p1.total(), p2.total());
+
+    print("== Resumen ==");
+    print(p1.nombre);
+    print(p1.total());
+    print(p2.nombre);
+    print(p2.total());
+    print("Mejor total:");
+    print(mejorTotal);
+}
+
+func imprimirPromedioGlobal(nums: list<int>): void {
+    let promedio: float = promedioLista(nums);
+    print("Promedio global:");
+    print(promedio);
+}

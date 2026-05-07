@@ -1,0 +1,24 @@
+// Ejemplo: try/catch/finally e interpolacion de strings.
+
+func dividir(a: int, b: int): float {
+    return float(a) / float(b);
+}
+
+func main(): void {
+    let nombre: string = "Gabriel";
+    let a: int = 10;
+    let b: int = 0;
+
+    print("Hola ${nombre}, iniciando prueba de errores...");
+
+    try {
+        let resultado: float = dividir(a, b);
+        print("Resultado: ${resultado}");
+    } catch (err) {
+        print("Ocurrio un error: ${err}");
+    } finally {
+        print("Proceso finalizado para ${nombre}.");
+    }
+}
+
+main();

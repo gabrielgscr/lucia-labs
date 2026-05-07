@@ -1,0 +1,27 @@
+// Ejemplo de uso de date y datetime en Lucia.
+
+func main(): void {
+    let birthday: date = date(1995, 7, 21);
+    let meeting: datetime = datetime(2026, 3, 11, 14, 30, 0);
+
+    let todayValue: date = today();
+    let nowValue: datetime = now();
+
+    print("Cumpleanos: "+ str(birthday));
+    print("Reunion: "+ str(meeting));
+    print("Hoy: "+ str(todayValue));
+    print("Ahora: "+ str(nowValue));
+
+    print(type_of(birthday));
+    print(type_of(meeting));
+    print(type_of(todayValue));
+    print(type_of(nowValue));
+
+    if (birthday < todayValue) {
+        print("La fecha de cumpleanos ya paso este anio.");
+    } else {
+        print("La fecha de cumpleanos aun no llega este anio.");
+    }
+}
+
+main();

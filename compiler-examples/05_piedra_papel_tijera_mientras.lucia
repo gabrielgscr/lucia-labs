@@ -1,0 +1,65 @@
+// Ejemplo de Mientras
+// En este ejemplo se implementa el juego piedra papel o tijera de manera repetitiva.
+// Autor: Gabriel Gonzalez (version Lucia)
+
+func mostrarMenu(nombre: string): void {
+    print(nombre + ". Por favor seleccione una opcion");
+    print("1. Piedra.");
+    print("2. Papel.");
+    print("3. Tijera.");
+    print("4. Salir.");
+}
+
+func main(): void {
+    let nombre: string = "";
+    let op: int = 0;
+    let opGenerada: int = 0;
+
+    print("Por favor escriba su nombre");
+    nombre = input();
+
+    print("Bienvenid@ "+ nombre + ". Por favor seleccione una opcion");
+    print("1. Piedra.");
+    print("2. Papel.");
+    print("3. Tijera.");
+    print("4. Salir.");
+    op = int(input());
+
+    while (op != 4) {
+        opGenerada = random(1, 3);
+        print(opGenerada);
+        switch (op) {
+            case 1:
+            if (opGenerada == 1) {
+                print("Piedra contra Piedra. Empate.");
+            } else if (opGenerada == 2) {
+                print("Papel envuelve la piedra. Pierdes.");
+            } else {
+                print("Piedra le gana a las tijeras. Ganas.");
+            }
+            case 2:
+            if (opGenerada == 1) {
+                print("Papel envuelve la piedra. Ganas.");
+            } else if (opGenerada == 2) {
+                print("Papel contra papel. Empate.");
+            } else {
+                print("Tijera corta el papel. Pierdes.");
+            }
+            case 3:
+            if (opGenerada == 1) {
+                print("Piedra destruye tijera. Pierdes.");
+            } else if (opGenerada == 2) {
+                print("Tijera corta papel. Ganas.");
+            } else {
+                print("Tijera contra tijera. Empate.");
+            }
+            default:
+            print("Opcion no valida.");
+        }
+
+        mostrarMenu(nombre);
+        op = int(input());
+    }
+
+    print("Ha elegido salir. Muchas gracias por jugar Piedra, Papel o Tijera.");
+}

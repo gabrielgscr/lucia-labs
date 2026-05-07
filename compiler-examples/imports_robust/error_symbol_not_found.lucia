@@ -1,0 +1,6 @@
+import "math_utils.lucia";
+
+func main(): void {
+    let x: int = sumar(1, 2);
+    print(x);
+}

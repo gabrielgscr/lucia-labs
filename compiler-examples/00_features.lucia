@@ -1,0 +1,88 @@
+// Variables, inferencia de tipos y operaciones matemáticas.
+func matematicas(): void {
+    let a = 10;
+    let b: int = 3;
+    print(a + b);
+    print(a - b);
+    print(a * b);
+    print(a / b);
+    print(a % b);
+}
+
+// Operadores lógicos y comparaciones.
+func logica(): void {
+    let activo: bool = true;
+    if ((activo && (10 >= 3)) || !(false)) {
+        print("logica ok");
+    }
+}
+
+// Listas, indexación, append y len.
+func listas(): void {
+    let nums: list<int> = [1, 2, 3];
+    print(nums[0]);
+    nums.append(4);
+    print(len(nums));
+    print(nums);
+}
+
+// Diccionarios, indexación, keys y values.
+func diccionarios(): void {
+    let persona: dict<string, any> = {"nombre": "Gabriel", "edad": 25};
+    print(persona["nombre"]);
+    print(persona.keys());
+    print(persona.values());
+}
+
+// if, else if, else, while, for, break y continue.
+func controlFlujo(): void {
+    let i: int = 0;
+    while (i < 3) {
+        print(i);
+        i = i + 1;
+    }
+
+    for (i = 0; i <= 5; i = i + 1) {
+        if (i == 2) {
+            continue;
+        } else if (i == 4) {
+            break;
+        } else {
+            print(i);
+        }
+    }
+}
+
+// Clases, constructor, métodos y this.
+class Persona {
+    let nombre: string;
+    let edad: int;
+
+    constructor(nombre: string, edad: int) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    func saludar(): void {
+        print("Hola, soy " + this.nombre);
+    }
+
+    func esMayor(): bool {
+        return this.edad >= 18;
+    }
+}
+
+func clases(): void {
+    let p = Persona("Gabriel", 25);
+    p.saludar();
+    print(p.esMayor());
+}
+
+func main(): void {
+    matematicas();
+    logica();
+    listas();
+    diccionarios();
+    controlFlujo();
+    clases();
+}

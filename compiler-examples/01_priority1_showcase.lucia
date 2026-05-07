@@ -1,0 +1,95 @@
+// Complete showcase including Priority 1 stdlib built-ins.
+
+func conversionsAndTypes(): void {
+    let rawInt: string = "42";
+    let rawFloat: string = "3.1415";
+
+    let n: int = int(rawInt);
+    let f: float = float(rawFloat);
+    let b: bool = bool(n);
+    let s: string = str(f);
+
+    print(n);
+    print(f);
+    print(b);
+    print(s);
+
+    print(type_of(n));
+    print(type_of(f));
+    print(type_of(b));
+    print(type_of(s));
+    print(type_of([1, 2, 3]));
+    print(type_of({"a": 1, "b": 2}));
+    print(type_of(null));
+}
+
+func collectionsAndControlFlow(): void {
+    let nums: list<int> = [1, 2, 3];
+    nums.append(4);
+
+    let info: dict<string, any> = {
+        "name": "Lucia",
+        "version": 1
+    };
+
+    print(len(nums));
+    print(nums[0]);
+    print(info["name"]);
+    print(info.keys());
+    print(info.values());
+
+    let i: int = 0;
+    while (i < len(nums)) {
+        print(nums[i]);
+        i = i + 1;
+    }
+
+    for (i = 0; i < 6; i = i + 1) {
+        if (i == 2) {
+            continue;
+        } else if (i == 5) {
+            break;
+        } else {
+            print(i);
+        }
+    }
+}
+
+class Account {
+    let owner: string;
+    let balance: float;
+
+    constructor(owner: string, balance: float) {
+        this.owner = owner;
+        this.balance = balance;
+    }
+
+    func deposit(amount: float): void {
+        this.balance = this.balance + amount;
+    }
+
+    func summary(): string {
+        return this.owner + " => " + str(this.balance);
+    }
+}
+
+func classesAndMethods(): void {
+    let acc = Account("Ada", 100.0);
+    acc.deposit(25.5);
+    print(acc.summary());
+    print(type_of(acc));
+}
+
+// This function demonstrates input without forcing interactive execution in main.
+func inputDemo(): void {
+    let name: string = input("Name: ");
+    print("Hello " + name);
+    print(type_of(name));
+}
+
+func main(): void {
+    conversionsAndTypes();
+    collectionsAndControlFlow();
+    classesAndMethods();
+    inputDemo();
+}

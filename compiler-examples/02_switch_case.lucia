@@ -1,0 +1,18 @@
+func describe(code: int): void {
+    switch (code) {
+        case 200:
+        print("OK");
+        case 404:
+        print("Not Found");
+        case 500:
+        print("Server Error");
+        default:
+        print("Unknown");
+    }
+}
+
+func main(): void {
+    describe(200);
+    describe(404);
+    describe(123);
+}

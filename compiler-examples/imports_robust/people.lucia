@@ -1,0 +1,21 @@
+class Persona {
+    let nombre: string;
+    let puntajes: list<int>;
+
+    constructor(nombre: string, puntajes: list<int>) {
+        this.nombre = nombre;
+        this.puntajes = puntajes;
+    }
+
+    func total(): int {
+        let i: int = 0;
+        let total: int = 0;
+
+        while (i < len(this.puntajes)) {
+            total = total + this.puntajes[i];
+            i = i + 1;
+        }
+
+        return total;
+    }
+}

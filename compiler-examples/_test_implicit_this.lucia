@@ -1,0 +1,37 @@
+class Carta {
+    let Valor: int;
+    let Palo: int;
+
+    constructor(Valor: int, Palo: int) {
+        this.Valor = Valor;
+        this.Palo = Palo;
+    }
+
+    func obtenerNombreValor(): string {
+        switch (Valor) {
+            case 1:
+            case 14: return "As";
+            case 11: return "Jota";
+            case 12: return "Reina";
+            case 13: return "Rey";
+            default: return str(Valor);
+        }
+    }
+
+    func obtenerNombrePalo(): string {
+        switch (Palo) {
+            case 1: return "Diamantes";
+            case 2: return "Espadas";
+            case 3: return "Tréboles";
+            case 4: return "Corazones";
+            default: return "Desconocido";
+        }
+    }
+
+    func toString(): string {
+        return obtenerNombreValor() + " de " + obtenerNombrePalo();
+    }
+}
+
+let c = Carta(12, 3);
+print(c.toString());
