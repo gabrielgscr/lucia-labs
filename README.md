@@ -1,6 +1,6 @@
 # lucia-labs
 
-[![Lucia](https://img.shields.io/badge/Lucia-lang-blue?style=flat-square&logo=data:image/png;base64,iVBORw0KGgo=)](https://www.lucia-lang.com)
+[![Lucia](https://img.shields.io/badge/Lucia-lucia--lang.com-blue?style=flat-square)](https://www.lucia-lang.com)
 
 Repository of labs and examples for the **Lucia** programming language.
 
