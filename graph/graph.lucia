@@ -1,0 +1,41 @@
+class Node {
+    let id: string;
+    let neighbors: list<Node> = [];
+
+    constructor() {
+        this.id = "null";
+    }
+
+    func addNeighbor(node: Node): void {
+        this.neighbors.append(node);
+    }
+}
+
+class Graph {
+    let nodes: list<Node> = [];
+
+    func addNode(id: string): void {
+        let newNode: Node = Node();
+        newNode.id = id;
+        this.nodes.append(newNode);
+    }
+
+    func findNode(id: string): Node {
+        for (n in this.nodes) {
+            if (n.id == id) {
+                return n;
+            }
+        }
+        return null;
+    }
+
+    func connect(id1: string, id2: string): void {
+        let n1 = this.findNode(id1);
+        let n2 = this.findNode(id2);
+
+        if (n1 != null && n2 != null) {
+            n1.addNeighbor(n2);
+            n2.addNeighbor(n1);
+        }
+    }
+}

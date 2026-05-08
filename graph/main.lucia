@@ -1,24 +1,24 @@
-import "grafo.lucia";
+import "graph.lucia";
 
-let grafo: Grafo = Grafo();
+let graph: Graph = Graph();
 
-grafo.agregarNodo("A");
-grafo.agregarNodo("B");
-grafo.agregarNodo("C");
-grafo.agregarNodo("D");
+graph.addNode("A");
+graph.addNode("B");
+graph.addNode("C");
+graph.addNode("D");
 
-grafo.conectar("A","B");
-grafo.conectar("A","C");
-grafo.conectar("B","D");
+graph.connect("A","B");
+graph.connect("A","C");
+graph.connect("B","D");
 
-let nodoA: Nodo = grafo.buscarNodo("A");
+let nodeA: Node = graph.findNode("A");
 
-if (nodoA != null) {
-    print("Nodo encontrado:");
-    print(nodoA.id);
+if (nodeA != null) {
+    print("Node found:");
+    print(nodeA.id);
 
-    print("Vecinos de A:");
-    for (vecino in nodoA.vecinos) {
-        print(vecino.id);
+    print("Neighbors of A:");
+    for (neighbor in nodeA.neighbors) {
+        print(neighbor.id);
     }
 }
