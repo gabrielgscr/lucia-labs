@@ -1,0 +1,14 @@
+func main(): void{
+    let tc: int = 450;
+    let amount: float = 0;
+    let result: float = 0;
+
+    amount = float(input("Write the amount to convert: "));
+    if (amount > 0) {
+        result = amount * tc;
+        print("The amount ${amount} in dollars is ${result}");
+    } else {
+        print("Amount shold be greater than 0.");
+    }
+
+}
