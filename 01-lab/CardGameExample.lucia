@@ -1,0 +1,51 @@
+// Variables globales o de alcance principal
+let cartaJugador = 0;
+let cartaMaquina = 0;
+let puntosJugador = 0;
+let puntosIA = 0;
+let continuar = true;
+let respuesta = "";
+
+// Función para obtener el nombre de la carta
+func ObtenerNombreCarta(dato: int): string {
+    if (dato == 11) { return "J"; }
+    if (dato == 12) { return "Q"; }
+    if (dato == 13) { return "K"; }
+    if (dato == 1) { return "AS"; }
+    return str(dato);
+}
+
+// Lógica principal
+while (continuar) {
+    print("Inicia el juego");
+    cartaJugador = random(1, 13);
+    cartaMaquina = random(1, 13);
+
+    print("Carta obtenida por el jugador "+ ObtenerNombreCarta(cartaJugador));
+    print("Carta obtenida por la IA "+ ObtenerNombreCarta(cartaMaquina));
+
+    if (cartaJugador > cartaMaquina) {
+        print("Ha ganado el jugador");
+        puntosJugador += 1;
+    } else if (cartaJugador < cartaMaquina) {
+        print("Ha ganado la IA");
+        puntosIA += 1;
+    } else {
+        print("Ha ocurrido un empate");
+    }
+
+    print("Puntos del jugador: "+ str(puntosJugador));
+    print("Puntos IA: "+ str(puntosIA));
+
+    // Entrada de usuario
+    respuesta = input("¿Desea volver a jugar? S/N: ");
+    continuar = (respuesta == ""|| respuesta.upper() == "S");
+}
+
+if (puntosJugador > puntosIA) {
+    print("Felicidades has ganado");
+} else if (puntosJugador < puntosIA) {
+    print("Lo siento has perdido");
+} else {
+    print("Hemos empatado, inténtalo de nuevo");
+}
