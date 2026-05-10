@@ -1,51 +1,51 @@
-// Variables globales o de alcance principal
-let cartaJugador = 0;
-let cartaMaquina = 0;
-let puntosJugador = 0;
-let puntosIA = 0;
-let continuar = true;
-let respuesta = "";
+// Global variables
+let playerCard = 0;
+let machineCard = 0;
+let playerPoints = 0;
+let iaPoints = 0;
+let keepPlaying = true;
+let response = "";
 
-// Función para obtener el nombre de la carta
-func ObtenerNombreCarta(dato: int): string {
-    if (dato == 11) { return "J"; }
-    if (dato == 12) { return "Q"; }
-    if (dato == 13) { return "K"; }
-    if (dato == 1) { return "AS"; }
-    return str(dato);
+// Function to get the card name
+func GetCardName(value: int): string {
+    if (value == 11) { return "J"; }
+    if (value == 12) { return "Q"; }
+    if (value == 13) { return "K"; }
+    if (value == 1) { return "Ace"; }
+    return str(value);
 }
 
-// Lógica principal
-while (continuar) {
-    print("Inicia el juego");
-    cartaJugador = random(1, 13);
-    cartaMaquina = random(1, 13);
+// Main logic
+while (keepPlaying) {
+    print("Game starts");
+    playerCard = random(1, 13);
+    machineCard = random(1, 13);
 
-    print("Carta obtenida por el jugador "+ ObtenerNombreCarta(cartaJugador));
-    print("Carta obtenida por la IA "+ ObtenerNombreCarta(cartaMaquina));
+    print("Player card: "+ GetCardName(playerCard));
+    print("IA card: "+ GetCardName(machineCard));
 
-    if (cartaJugador > cartaMaquina) {
-        print("Ha ganado el jugador");
-        puntosJugador += 1;
-    } else if (cartaJugador < cartaMaquina) {
-        print("Ha ganado la IA");
-        puntosIA += 1;
+    if (playerCard > machineCard) {
+        print("Player wins");
+        playerPoints += 1;
+    } else if (playerCard < machineCard) {
+        print("IA wins");
+        iaPoints += 1;
     } else {
-        print("Ha ocurrido un empate");
+        print("It is a tie");
     }
 
-    print("Puntos del jugador: "+ str(puntosJugador));
-    print("Puntos IA: "+ str(puntosIA));
+    print("Player points: "+ str(playerPoints));
+    print("IA points: "+ str(iaPoints));
 
-    // Entrada de usuario
-    respuesta = input("¿Desea volver a jugar? S/N: ");
-    continuar = (respuesta == ""|| respuesta.upper() == "S");
+    // User input
+    response = input("Do you want to play again? Y/N: ");
+    keepPlaying = (response == ""|| response.upper() == "Y");
 }
 
-if (puntosJugador > puntosIA) {
-    print("Felicidades has ganado");
-} else if (puntosJugador < puntosIA) {
-    print("Lo siento has perdido");
+if (playerPoints > iaPoints) {
+    print("Congratulations, you won");
+} else if (playerPoints < iaPoints) {
+    print("Sorry, you lost");
 } else {
-    print("Hemos empatado, inténtalo de nuevo");
+    print("It is a tie, try again");
 }
