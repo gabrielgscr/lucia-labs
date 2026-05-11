@@ -1,6 +1,6 @@
 func stringsDemo(): void {
-    let text: string ="  Lucia Language  ";
-    let sep: string ="-";
+    let text: string = "  Lucia Language  ";
+    let sep: string = "-";
     let parts: list<string> = text.trim().split(" ");
     print(text.upper());
     print(text.lower());
@@ -24,7 +24,7 @@ func mathDemo(): void {
 
 func collectionsDemo(): void {
     let nums: list<int> = [1, 2, 3, 4];
-    let info: dict<string, int> = {"one": 1,"two": 2};
+    let info: dict<string, any> = {"one": 1,"two": true};
     print(nums.contains(3));
     print(nums.pop());
     print(info.contains_key("one"));
